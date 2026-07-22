@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Redirect</title>
+</head>
+<body>
+<link rel="stylesheet" href="styles.css">
+<h1>Welcome to the Geometry Dash Wiki!</h1>
+<img src="./Images/wiki.png" alt="picture of the Google logo">
+<a href="other/about.html">about</a>
+<a href="other/credits.html">credits</a>
+
+<form onsubmit="handleSubmit(event)">
+    <input
+            type="text"
+            id="codeInput"
+            placeholder="Search"
+    >
+</form>
+
+<script>
+    function handleSubmit(e) {
+        e.preventDefault();
+        checkCode();
+    }
+
+    function checkCode() {
+        const code = document.getElementById("codeInput").value.trim();
+
+        // Store multiple codewords and their destinations
+        const codes = {
+            "Kingsammelot": "other/Kingsammelot.html",
+            "Vortrox": "other/Vortrox.html",
+            "SecretPage": "other/secret.html"
+        };
+
+        if (codes[code]) {
+            window.location.href = codes[code];
+        } else {
+            alert("Sorry but we dont have information on that");
+        }
+    }
+</script>
+
+</body>
+</html>
